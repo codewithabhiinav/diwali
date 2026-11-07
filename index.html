@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d20">
+<meta name="description" content="A sparkling Diwali greeting from Abhinav Kumar, Founder & CEO of Hacknfinity.">
+<title>Happy Diwali 2026 | Hacknfinity</title>
+<style>
+:root{--gold:#ffd477;--pink:#e34bba;--night:#100d20}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:radial-gradient(ellipse at 50% 20%,#39214d 0%,#171329 48%,#090914 100%);overflow-x:hidden}
+#fireworks{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.page{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:34px 16px}
+.card{width:min(760px,100%);text-align:center;padding:clamp(24px,5vw,52px);border:1px solid #ffffff26;border-radius:28px;background:linear-gradient(145deg,#ffffff12,#ffffff05);box-shadow:0 25px 90px #0008;backdrop-filter:blur(12px)}
+.brand{font-size:clamp(20px,4vw,28px);font-weight:800;letter-spacing:.3px}.brand span{color:#c879ff}
+.eyebrow{margin:24px 0 4px;color:#ffe5a6;letter-spacing:4px;text-transform:uppercase;font-size:12px}
+h1{margin:0;color:var(--gold);font-family:Georgia,serif;font-size:clamp(48px,10vw,88px);line-height:1.05;text-shadow:0 0 28px #ffb52d66}
+.date{font-size:clamp(16px,3vw,20px);margin:18px 0 24px;color:#fff0cf}
+.message{max-width:560px;margin:0 auto;color:#f6eafc;line-height:1.7;font-size:16px}
+.diya{font-size:64px;filter:drop-shadow(0 0 18px #ff9d22);margin:12px 0}
+.signature{margin-top:30px;line-height:1.55}.signature strong{display:block;font-size:22px;color:#ffe0a0}.signature small{color:#e7d7f4}
+.gift span:last-child{font-size:12px;color:#ffe2a5}
+.hint{font-size:13px;color:#d8c7e8;margin:14px 0 0}
+.reveal{display:none;margin:20px auto 0;padding:18px;border-radius:16px;background:#2b1a40;border:1px solid #e9b6ff55;max-width:570px;animation:pop .35s ease}
+.reveal.show{display:block}.reveal h2{margin:0 0 8px;color:#ffdc91;font-size:20px}.reveal p{margin:0;color:#f5eafa;line-height:1.55}
+.footer{margin-top:28px;color:#b9a9c9;font-size:12px}
+@keyframes pop{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+
+.wheel-section{margin:42px auto 0;padding:25px 16px 22px;border:1px solid #ffffff26;border-radius:22px;background:linear-gradient(145deg,#ffffff12,#ffffff05)}
+.wheel-section h2{color:#ffe0a0;margin:0 0 7px;font-size:clamp(22px,4vw,29px)}
+.wheel-section>p{margin:0 auto 20px;color:#e9dff2;line-height:1.55;max-width:560px;font-size:14px}
+.wheel-wrap{position:relative;width:min(100%,430px);aspect-ratio:1;margin:0 auto 18px;filter:drop-shadow(0 14px 30px #0008)}
+#wheelCanvas{width:100%;height:100%;display:block;border-radius:50%;transition:transform 6s cubic-bezier(.12,.72,.08,1);will-change:transform}
+.wheel-pointer{position:absolute;z-index:2;left:50%;top:-7px;transform:translateX(-50%);width:0;height:0;border-left:19px solid transparent;border-right:19px solid transparent;border-top:35px solid #fff0bf;filter:drop-shadow(0 3px 5px #0009)}
+.wheel-hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:66px;height:66px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff4cc,#d99b35 55%,#8e4b18);border:4px solid #fff0bb;box-shadow:0 0 0 5px #291632;color:#38182c;font-weight:900;font-size:13px;pointer-events:none}
+.spin-btn{border:0;border-radius:999px;padding:14px 34px;background:linear-gradient(100deg,#ffd477,#ffad45);color:#29132d;font-weight:900;font-size:16px;cursor:pointer;box-shadow:0 8px 26px #ffb54540;transition:transform .2s,filter .2s}
+.spin-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.spin-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.wheel-result{display:none;margin:22px auto 0;max-width:560px;padding:20px;border-radius:18px;background:#2b1a40;border:1px solid #e9b6ff66;box-shadow:0 10px 30px #0003}
+.wheel-result.show{display:block;animation:pop .35s ease}
+.wheel-result h3{margin:0 0 8px;color:#ffdc91;font-size:23px}
+.wheel-result p{margin:0;color:#f5eafa;line-height:1.55}
+.request-box{display:none;margin-top:14px;text-align:left}
+.request-box.show{display:block}
+.request-box textarea{width:100%;min-height:82px;margin:8px 0 10px;padding:12px;border-radius:12px;border:1px solid #ffffff40;background:#170f2a;color:white;font:inherit;resize:vertical}
+.copy-request{border:1px solid #ffdc91;background:transparent;color:#ffdc91;border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer}
+.spin-note{font-size:12px!important;color:#bfaecf!important;margin:14px auto 0!important}
+@media(max-width:520px){.wheel-section{padding:22px 12px}.wheel-hub{width:56px;height:56px;font-size:11px}.wheel-pointer{border-left-width:16px;border-right-width:16px;border-top-width:30px}}
+
+@media(max-width:520px){.card{border-radius:20px}}
+
+/* Interactive festive effects */
+.spark-cursor{position:fixed;left:0;top:0;width:18px;height:18px;border-radius:50%;pointer-events:none;z-index:9999;
+  background:radial-gradient(circle,#fffbd9 0%,#ffd477 28%,#ff8c3a 58%,transparent 72%);
+  mix-blend-mode:screen;transform:translate(-50%,-50%);box-shadow:0 0 14px 5px #ffbf57aa,0 0 30px 8px #ec65c977;opacity:0;transition:opacity .2s}
+.spark-dot{position:fixed;pointer-events:none;z-index:9998;font-size:15px;line-height:1;transform:translate(-50%,-50%);
+  animation:cursorSpark .75s ease-out forwards;filter:drop-shadow(0 0 5px #ffd477)}
+@keyframes cursorSpark{0%{opacity:1;transform:translate(-50%,-50%) scale(.7) rotate(0)}100%{opacity:0;transform:translate(-50%,-90%) scale(1.35) rotate(110deg)}}
+.cracker-flash{position:fixed;inset:0;z-index:15;pointer-events:none;opacity:0;
+  background:radial-gradient(circle at var(--fx,50%) var(--fy,40%),#fff8c766 0, #ffb74d22 12%,transparent 36%);
+  animation:crackerFlash .7s ease-out forwards}
+@keyframes crackerFlash{0%{opacity:1}100%{opacity:0}}
+.spin-btn.spinning{animation:spinPulse .85s ease-in-out infinite alternate}
+@keyframes spinPulse{from{box-shadow:0 0 12px #ffb54566,0 0 24px #e34bba33}to{box-shadow:0 0 24px #ffdf91bb,0 0 48px #e34bba88}}
+@media(pointer:coarse){.spark-cursor,.spark-dot{display:none}}
+
+
+/* Diwali mini-game */
+.game-section{margin:34px auto 0;padding:24px 16px 20px;border:1px solid #ffffff2b;border-radius:22px;background:linear-gradient(145deg,#ffffff14,#ffffff05)}
+.game-section h2{color:#ffe0a0;margin:0 0 7px;font-size:clamp(22px,4vw,29px)}
+.game-intro{margin:0 auto 16px;color:#e9dff2;line-height:1.55;max-width:580px;font-size:14px}
+.game-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:0 auto 13px}
+.game-stat{padding:8px 13px;border:1px solid #ffffff2b;border-radius:999px;background:#ffffff0d;color:#fff0d1;font-size:13px}
+.game-stat strong{color:#ffd477;margin-left:4px}
+.game-frame{position:relative;width:min(100%,720px);margin:0 auto;overflow:hidden;border:1px solid #ffe0a04a;border-radius:17px;background:#140e27;box-shadow:inset 0 0 40px #7d379333}
+#diwaliGame{display:block;width:100%;height:auto;touch-action:none}
+.game-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;background:#100d20c9;backdrop-filter:blur(4px)}
+.game-overlay.hidden{display:none}
+.game-overlay h3{margin:0 0 7px;color:#ffe0a0;font-size:clamp(22px,4vw,32px)}
+.game-overlay p{max-width:440px;margin:0 0 16px;color:#f4e8fb;font-size:14px;line-height:1.55}
+.game-btn{border:0;border-radius:999px;padding:12px 25px;background:linear-gradient(100deg,#ffd477,#ffad45);color:#29132d;font-weight:900;font-size:15px;cursor:pointer;box-shadow:0 8px 25px #ffb54540}
+.game-hint{margin:12px auto 0;color:#c9bad8;font-size:12px;line-height:1.5}
+@media(max-width:520px){.game-section{padding:20px 10px}.game-stat{padding:7px 10px;font-size:12px}}
+
+
+body.intro-locked{overflow:hidden}
+.intro-screen{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at 50% 35%,#563064 0%,#251735 43%,#0b0a17 100%);opacity:1;visibility:visible;transition:opacity .85s ease,visibility .85s ease}
+.intro-screen.leaving{opacity:0;visibility:hidden;pointer-events:none}
+.intro-card{width:min(650px,100%);padding:clamp(28px,6vw,58px) 24px;text-align:center;border:1px solid #ffe0a055;border-radius:30px;background:linear-gradient(145deg,#ffffff18,#ffffff08);box-shadow:0 30px 100px #0009,0 0 50px #e34bba1f;backdrop-filter:blur(13px);animation:introFloat 4s ease-in-out infinite}
+@keyframes introFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.intro-brand{font-weight:900;font-size:clamp(22px,4vw,30px);color:#fff}.intro-brand span{color:#d18aff}
+.intro-diya{font-size:clamp(70px,14vw,112px);line-height:1.25;margin:12px 0 4px;filter:drop-shadow(0 0 22px #ffb43e);animation:introGlow 1.8s ease-in-out infinite alternate}
+@keyframes introGlow{from{filter:drop-shadow(0 0 10px #ffb43e)}to{filter:drop-shadow(0 0 34px #ffd477)}}
+.intro-kicker{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#ffdfa0;margin:8px 0}
+.intro-title{font:clamp(39px,9vw,70px)/1.03 Georgia,serif;color:#ffd477;margin:8px 0;text-shadow:0 0 26px #ffb43e55}
+.intro-copy{max-width:460px;margin:14px auto 25px;color:#f1e5f8;font-size:15px;line-height:1.7}
+.intro-date{color:#ffdfac;font-size:14px;margin-bottom:25px}
+.intro-cta{border:0;border-radius:999px;padding:16px 30px;min-height:54px;background:linear-gradient(100deg,#ffe39b,#ffb84f);color:#32172d;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 10px 35px #ffb54555,0 0 0 5px #ffd47718;transition:transform .2s ease,filter .2s ease}
+.intro-cta:hover{transform:translateY(-3px) scale(1.025);filter:brightness(1.08)}.intro-cta:disabled{cursor:wait;opacity:.9}
+.intro-loading{display:none;width:min(300px,85%);margin:24px auto 0;color:#ffe5b6;font-size:13px}.intro-loading.show{display:block}
+.intro-progress{height:5px;margin-top:12px;border-radius:99px;background:#ffffff20;overflow:hidden}.intro-progress span{display:block;width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,#ffd477,#f28ac4);transition:width 2.2s ease}
+.intro-sparkle{position:absolute;pointer-events:none;color:#ffe3a0;text-shadow:0 0 12px #ffd477;animation:introTwinkle 2.8s ease-in-out infinite}
+@keyframes introTwinkle{0%,100%{opacity:.2;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.3) rotate(45deg)}}
+@media(max-width:520px){.intro-card{border-radius:22px}.intro-copy{font-size:14px}.intro-cta{width:100%;max-width:320px}}
+@media(prefers-reduced-motion:reduce){.intro-card,.intro-diya,.intro-sparkle{animation:none}.intro-screen{transition:none}}
+
+
+/* Official Hacknfinity identity */
+.brand-logo{display:block;width:min(205px,66%);height:auto;margin:0 auto 8px;object-fit:contain;
+  filter:drop-shadow(0 0 16px #5d8cff66) drop-shadow(0 0 24px #cf70ff45);animation:logoBreathe 4.5s ease-in-out infinite}
+.intro-logo{display:block;width:min(340px,78vw);max-height:205px;height:auto;object-fit:contain;margin:0 auto 5px;
+  filter:drop-shadow(0 0 20px #6e79ff65) drop-shadow(0 0 34px #d56eff45);animation:logoBreathe 4.5s ease-in-out infinite}
+@keyframes logoBreathe{0%,100%{transform:scale(1);filter:drop-shadow(0 0 14px #5d8cff4d) drop-shadow(0 0 22px #cf70ff30)}50%{transform:scale(1.025);filter:drop-shadow(0 0 22px #5d8cff88) drop-shadow(0 0 32px #cf70ff68)}}
+
+/* Premium neon cursor with a smooth follow effect and comet-like spark trail */
+.spark-cursor{position:fixed;left:0;top:0;width:34px;height:34px;border:1px solid #b9b4ffb8;border-radius:50%;
+  pointer-events:none;z-index:99999;opacity:0;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,#ffffff35 0%,#7b70ff1f 38%,#db78ff08 70%);
+  box-shadow:0 0 8px 2px #7d78ff9c,0 0 24px 7px #b55cff61,inset 0 0 10px #7adfff59;
+  backdrop-filter:blur(2px);transition:width .22s ease,height .22s ease,opacity .2s ease,box-shadow .22s ease}
+.spark-cursor::before{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;border-radius:50%;
+  background:#fff;transform:translate(-50%,-50%);box-shadow:0 0 8px 4px #ffe4a0,0 0 18px 8px #8f7aff}
+.spark-cursor::after{content:"";position:absolute;inset:-7px;border:1px solid #65eaff88;border-radius:50%;
+  transform:scale(.72);animation:cursorOrbit 2.1s linear infinite}
+@keyframes cursorOrbit{to{transform:scale(.72) rotate(360deg)}}
+.spark-cursor.cursor-hover{width:48px;height:48px;box-shadow:0 0 12px 4px #8d7cffb3,0 0 34px 12px #d75cff88,inset 0 0 15px #7adfff85}
+.spark-cursor.cursor-down{width:25px;height:25px;background:#ffe6a044}
+.spark-dot{position:fixed;pointer-events:none;z-index:99998;font-size:15px;line-height:1;
+  transform:translate(-50%,-50%);animation:cursorSpark .85s ease-out forwards;filter:drop-shadow(0 0 7px #ffd477)}
+@keyframes cursorSpark{0%{opacity:1;transform:translate(-50%,-50%) scale(.45) rotate(0)}45%{opacity:1}
+  100%{opacity:0;transform:translate(calc(-50% + var(--drift,12px)),-115%) scale(1.55) rotate(150deg)}}
+@media(pointer:fine){body,body *:not(input):not(textarea){cursor:none!important}}
+@media(pointer:coarse){.spark-cursor,.spark-dot{display:none}}
+@media(prefers-reduced-motion:reduce){.brand-logo,.intro-logo,.spark-cursor::after{animation:none}}
+
+
+.festive-decor{position:fixed;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.decor-diya,.decor-lantern{position:absolute;display:block;filter:drop-shadow(0 0 13px #ffae43aa);user-select:none}
+.decor-diya{font-size:clamp(22px,3.4vw,39px);animation:diyaBob 4.2s ease-in-out infinite}
+.decor-lantern{font-size:clamp(24px,3vw,36px);transform-origin:top center;animation:lanternSway 5s ease-in-out infinite}
+.decor-diya-a{left:3%;top:24%;animation-delay:-.4s}.decor-diya-b{right:4%;top:31%;animation-delay:-1.6s}
+.decor-diya-c{left:8%;bottom:13%;animation-delay:-2.3s}.decor-diya-d{right:8%;bottom:12%;animation-delay:-.9s}
+.decor-diya-e{left:27%;top:7%;font-size:22px;animation-delay:-2.8s}.decor-diya-f{right:27%;top:8%;font-size:22px;animation-delay:-1.2s}
+.decor-lantern-a{left:7%;top:0}.decor-lantern-b{right:8%;top:0;animation-delay:-1.4s}
+.decor-lantern-c{left:28%;top:-8px;font-size:24px;animation-delay:-2.1s}.decor-lantern-d{right:29%;top:-8px;font-size:24px;animation-delay:-.7s}
+@keyframes diyaBob{0%,100%{transform:translateY(0) rotate(-4deg);opacity:.72}50%{transform:translateY(-13px) rotate(4deg);opacity:1}}
+@keyframes lanternSway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+@media(max-width:600px){.decor-diya-e,.decor-diya-f,.decor-lantern-c,.decor-lantern-d{display:none}.decor-diya-a{left:1%;top:32%}.decor-diya-b{right:1%;top:42%}.decor-diya-c{left:3%;bottom:8%}.decor-diya-d{right:3%;bottom:8%}}
+
+
+/* Hacknfinity Diwali Arcade: five extra mini-games */
+.arcade-section{margin:28px auto 0;padding:24px 16px;border:1px solid #ffffff2b;border-radius:22px;background:linear-gradient(145deg,#ffffff12,#ffffff05)}
+.arcade-section h2{margin:0 0 8px;color:#ffe0a0;font-size:clamp(23px,4vw,30px)}
+.arcade-intro{margin:0 auto 18px;color:#e9dff2;font-size:14px;line-height:1.6;max-width:650px}
+.arcade-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}
+.arcade-card{min-width:0;min-height:132px;padding:14px 8px;border-radius:16px;border:1px solid #ffffff2b;
+  background:linear-gradient(150deg,#ffffff13,#ffffff06);color:#fff;text-align:center;cursor:pointer;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease; font:inherit}
+.arcade-card:hover,.arcade-card.active{transform:translateY(-4px);border-color:#ffd477aa;background:linear-gradient(150deg,#ffd47722,#b45cff19)}
+.arcade-card .arcade-emoji{display:block;font-size:32px;margin-bottom:8px;filter:drop-shadow(0 0 8px #ffd47755)}
+.arcade-card strong{display:block;color:#ffe0a0;font-size:13px;line-height:1.3}
+.arcade-card small{display:block;margin-top:5px;color:#d2c2e1;font-size:11px;line-height:1.3}
+.arcade-playarea{margin:18px auto 0;padding:17px;border:1px solid #ffe0a044;border-radius:18px;background:#130f24aa}
+.arcade-playarea[hidden]{display:none}
+.arcade-playhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.arcade-playhead h3{margin:0;color:#ffdf9a;font-size:19px}
+.arcade-close{border:1px solid #ffffff3a;border-radius:999px;background:#ffffff0d;color:#f8eaff;padding:7px 12px;cursor:pointer}
+.arcade-panel[hidden]{display:none}
+.arcade-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:10px auto 14px}
+.arcade-stat{padding:7px 12px;border:1px solid #ffffff24;border-radius:999px;background:#ffffff0b;color:#fff0d1;font-size:12px}
+.arcade-stat b{color:#ffd477;margin-left:4px}
+.arcade-controls{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin:14px auto 4px}
+.arcade-btn{border:0;border-radius:999px;padding:10px 18px;background:linear-gradient(100deg,#ffe09a,#ffb34b);color:#32172d;font-weight:850;cursor:pointer}
+.arcade-btn.secondary{border:1px solid #ffffff44;background:#ffffff0c;color:#ffe6b3}
+.arcade-status{text-align:center;min-height:22px;margin:10px auto 0;color:#f5dca8;font-size:13px}
+.memory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;width:min(100%,440px);margin:0 auto}
+.memory-card{aspect-ratio:1;border:1px solid #d6a5ff55;border-radius:13px;background:linear-gradient(145deg,#3b2556,#1c1732);color:white;font-size:clamp(22px,5vw,36px);cursor:pointer;box-shadow:inset 0 0 15px #ffffff0b;transition:transform .18s,background .18s}
+.memory-card:hover{transform:translateY(-2px)}
+.memory-card.flipped,.memory-card.matched{background:linear-gradient(145deg,#7650a0,#3a2b65);border-color:#ffd477}
+.memory-card.matched{opacity:.58;cursor:default}
+.simon-pads{display:grid;grid-template-columns:repeat(2,minmax(100px,150px));gap:12px;justify-content:center}
+.simon-pad{height:105px;border:2px solid #ffffff55;border-radius:18px;opacity:.72;cursor:pointer;transition:filter .15s,transform .15s}
+.simon-pad.lit{opacity:1;filter:brightness(1.7) drop-shadow(0 0 15px #fff);transform:scale(1.045)}
+.simon-pad[data-pad="0"]{background:#ba4c7a}.simon-pad[data-pad="1"]{background:#3c9d9a}.simon-pad[data-pad="2"]{background:#6e58c5}.simon-pad[data-pad="3"]{background:#cb8b38}
+.dodge-wrap{width:min(100%,650px);margin:0 auto;overflow:hidden;border:1px solid #ffe0a04b;border-radius:14px;background:#100d20}
+#dodgeCanvas{display:block;width:100%;height:auto;touch-action:none}
+.tap-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;max-width:500px;margin:0 auto}
+.tap-cell{aspect-ratio:1;border:1px solid #ffffff2b;border-radius:13px;background:linear-gradient(145deg,#2b1d43,#17152b);font-size:clamp(20px,5vw,32px);cursor:pointer;transition:transform .14s,background .14s}
+.tap-cell:active{transform:scale(.92)}
+.puzzle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,94px));gap:8px;justify-content:center;margin:0 auto}
+.puzzle-tile{aspect-ratio:1;border:1px solid #ffe0a077;border-radius:13px;background:linear-gradient(145deg,#8250ac,#41285f);color:white;font-size:27px;font-weight:900;cursor:pointer;box-shadow:0 5px 13px #0003}
+.puzzle-tile.empty{background:#ffffff08;border:1px dashed #ffffff26;box-shadow:none;cursor:default}
+.arcade-hint{color:#c9bad8;text-align:center;font-size:12px;line-height:1.5;margin:12px auto 0}
+@media(max-width:850px){.arcade-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.arcade-section{padding:20px 10px}.arcade-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.arcade-card{min-height:120px}.arcade-playarea{padding:12px 8px}.simon-pad{height:90px}.puzzle-grid{grid-template-columns:repeat(3,minmax(0,82px))}}
+
+
+/* Looping Diwali background music control */
+.music-toggle{
+  position:fixed;right:18px;bottom:18px;z-index:9000;display:none;align-items:center;gap:9px;
+  border:1px solid #e4c2ff66;border-radius:999px;padding:10px 15px;
+  background:linear-gradient(135deg,#29163ddd,#11142ddd);color:#fff0ce;
+  box-shadow:0 8px 28px #0007,0 0 18px #a56cff33;backdrop-filter:blur(10px);
+  font:700 13px/1 system-ui,Arial,sans-serif;cursor:pointer;transition:transform .2s,background .2s;
+}
+.music-toggle.visible{display:flex}
+.music-toggle:hover{transform:translateY(-3px);background:linear-gradient(135deg,#45215f,#17294d)}
+.music-toggle .music-icon{font-size:17px;color:#ffd477}
+.music-toggle.paused{opacity:.82}
+@media(max-width:520px){.music-toggle{right:10px;bottom:10px;padding:9px 12px;font-size:12px}}
+
+</style>
+</head>
+<body class="intro-locked">
+
+<audio id="diwaliBackgroundMusic" src="assets/diwali-background-music.mp3" loop preload="auto" playsinline></audio>
+<button class="music-toggle" id="musicToggle" type="button" aria-label="Pause Diwali background music">
+  <span class="music-icon">♫</span><span id="musicToggleLabel">Music On</span>
+</button>
+
+
+
+<div class="intro-screen" id="introScreen">
+  <span class="intro-sparkle" style="left:12%;top:18%;font-size:25px">✦</span>
+  <span class="intro-sparkle" style="right:14%;top:23%;font-size:19px;animation-delay:.8s">✧</span>
+  <span class="intro-sparkle" style="left:19%;bottom:17%;font-size:17px;animation-delay:1.3s">✦</span>
+  <span class="intro-sparkle" style="right:18%;bottom:15%;font-size:26px;animation-delay:.4s">✧</span>
+  <section class="intro-card">
+    <img class="intro-logo" src="assets/hacknfinity-logo.png" alt="Hacknfinity logo">
+    <div class="intro-diya">🪔</div>
+    <div class="intro-kicker">A little festive surprise awaits</div>
+    <h1 class="intro-title">Happy Diwali<br>2026</h1>
+    <p class="intro-copy">Lights, laughter, fireworks and a special surprise — Abhinav and the Hacknfinity family have something waiting for you.</p>
+    <div class="intro-date">8 November 2026</div>
+    <button class="intro-cta" id="introRevealButton" type="button">🎁 Click here to surprise!</button>
+    <div class="intro-loading" id="introLoading" aria-live="polite">Lighting up your Diwali surprise...
+      <div class="intro-progress"><span id="introProgressBar"></span></div>
+    </div>
+  </section>
+</div>
+
+
+<canvas id="fireworks"></canvas>
+
+<div class="festive-decor" aria-hidden="true">
+  <span class="decor-diya decor-diya-a">🪔</span>
+  <span class="decor-diya decor-diya-b">🪔</span>
+  <span class="decor-diya decor-diya-c">🪔</span>
+  <span class="decor-diya decor-diya-d">🪔</span>
+  <span class="decor-diya decor-diya-e">🪔</span>
+  <span class="decor-diya decor-diya-f">🪔</span>
+  <span class="decor-lantern decor-lantern-a">🏮</span>
+  <span class="decor-lantern decor-lantern-b">🏮</span>
+  <span class="decor-lantern decor-lantern-c">🏮</span>
+  <span class="decor-lantern decor-lantern-d">🏮</span>
+</div>
+
+<div class="spark-cursor" id="sparkCursor" aria-hidden="true"></div>
+
+<main class="page">
+<section class="card">
+  <img class="brand-logo" src="assets/hacknfinity-logo.png" alt="Hacknfinity logo">
+  <div class="eyebrow">A festival of lights & new beginnings</div>
+  <h1>Happy<br>Diwali</h1>
+  <div class="date">8 November 2026</div>
+  <div class="diya">🪔</div>
+  <p class="message">May this Diwali light up your life with happiness, good health, new opportunities and endless success. Thank you for being part of our journey. Keep shining, keep building!</p>
+  <div class="signature">Warm wishes from <strong>Abhinav Kumar</strong><small>Founder &amp; CEO, Hacknfinity</small></div>
+
+  <section class="game-section" aria-labelledby="gameHeading">
+    <h2 id="gameHeading">🪔 Diwali Dhamaka: Catch the Diyas!</h2>
+    <p class="game-intro">Catch glowing diyas and festive sweets to score points. Dodge the firecrackers! You have 45 seconds and 3 lives. Can you become the Diwali champion?</p>
+    <div class="game-stats">
+      <div class="game-stat">⭐ Score <strong id="gameScore">0</strong></div>
+      <div class="game-stat">⏱️ Time <strong id="gameTime">45</strong>s</div>
+      <div class="game-stat">❤️ Lives <strong id="gameLives">3</strong></div>
+    </div>
+    <div class="game-frame">
+      <canvas id="diwaliGame" width="720" height="420" aria-label="Diwali game: move the basket to catch diyas and sweets and avoid firecrackers"></canvas>
+      <div class="game-overlay" id="gameOverlay">
+        <h3 id="gameOverlayTitle">Ready, Diwali Champion?</h3>
+        <p id="gameOverlayText">Move the basket with your mouse, finger, or arrow keys. Catch diyas and sweets (+10). Avoid firecrackers or lose a life!</p>
+        <button class="game-btn" id="gameStart" type="button">🎮 START GAME</button>
+      </div>
+    </div>
+    <p class="game-hint">Desktop: use ← → or A / D. Mobile: drag your finger across the game. Every diya or sweet gives +10 points.</p>
+  </section>
+
+  
+  <section class="arcade-section" aria-labelledby="arcadeHeading">
+    <h2 id="arcadeHeading">🎮 More Diwali Mini-Games</h2>
+    <p class="arcade-intro">Five extra festive challenges are waiting! Choose a game, beat your best score and enjoy the Hacknfinity Diwali arcade.</p>
+    <div class="arcade-grid">
+      <button class="arcade-card" type="button" data-arcade-game="memory">
+        <span class="arcade-emoji">🧠</span><strong>Diya Memory Match</strong><small>Find all matching pairs</small>
+      </button>
+      <button class="arcade-card" type="button" data-arcade-game="simon">
+        <span class="arcade-emoji">🎨</span><strong>Rangoli Rhythm</strong><small>Repeat the colour sequence</small>
+      </button>
+      <button class="arcade-card" type="button" data-arcade-game="dodge">
+        <span class="arcade-emoji">🧨</span><strong>Firecracker Dodge</strong><small>Dodge falling crackers</small>
+      </button>
+      <button class="arcade-card" type="button" data-arcade-game="tap">
+        <span class="arcade-emoji">🪔</span><strong>Diya Tap Rush</strong><small>Tap diyas, avoid bombs</small>
+      </button>
+      <button class="arcade-card" type="button" data-arcade-game="puzzle">
+        <span class="arcade-emoji">🪷</span><strong>Rangoli Tile Puzzle</strong><small>Arrange the tiles in order</small>
+      </button>
+    </div>
+
+    <div class="arcade-playarea" id="arcadePlayarea" hidden>
+      <div class="arcade-playhead">
+        <h3 id="arcadeActiveTitle">Choose your challenge</h3>
+        <button class="arcade-close" type="button" id="arcadeClose">✕ Close</button>
+      </div>
+
+      <div class="arcade-panel" id="arcade-memory" hidden>
+        <div class="arcade-stats">
+          <div class="arcade-stat">Moves <b id="memoryMoves">0</b></div>
+          <div class="arcade-stat">Pairs <b id="memoryPairs">0/8</b></div>
+          <div class="arcade-stat">Time <b id="memoryTime">60</b>s</div>
+        </div>
+        <div class="memory-grid" id="memoryGrid"></div>
+        <div class="arcade-controls"><button class="arcade-btn" id="memoryStart" type="button">Start / Shuffle</button></div>
+        <p class="arcade-status" id="memoryStatus">Flip two cards and find all eight pairs.</p>
+        <p class="arcade-hint">Match all pairs of festive symbols before the 60-second timer ends.</p>
+      </div>
+
+      <div class="arcade-panel" id="arcade-simon" hidden>
+        <div class="arcade-stats">
+          <div class="arcade-stat">Level <b id="simonLevel">0</b></div>
+          <div class="arcade-stat">Sequence <b id="simonLength">0</b></div>
+        </div>
+        <div class="simon-pads" id="simonPads">
+          <button class="simon-pad" type="button" data-pad="0" aria-label="Pink rangoli pad"></button>
+          <button class="simon-pad" type="button" data-pad="1" aria-label="Teal rangoli pad"></button>
+          <button class="simon-pad" type="button" data-pad="2" aria-label="Purple rangoli pad"></button>
+          <button class="simon-pad" type="button" data-pad="3" aria-label="Gold rangoli pad"></button>
+        </div>
+        <div class="arcade-controls"><button class="arcade-btn" id="simonStart" type="button">Start Rhythm</button></div>
+        <p class="arcade-status" id="simonStatus">Watch the lights, then repeat the pattern.</p>
+        <p class="arcade-hint">Each level adds one new colour to the sequence. Reach level 8 to win.</p>
+      </div>
+
+      <div class="arcade-panel" id="arcade-dodge" hidden>
+        <div class="arcade-stats">
+          <div class="arcade-stat">Time <b id="dodgeTime">30</b>s</div>
+          <div class="arcade-stat">Lives <b id="dodgeLives">3</b></div>
+          <div class="arcade-stat">Score <b id="dodgeScore">0</b></div>
+        </div>
+        <div class="dodge-wrap"><canvas id="dodgeCanvas" width="640" height="330" aria-label="Dodge falling firecrackers"></canvas></div>
+        <div class="arcade-controls"><button class="arcade-btn" id="dodgeStart" type="button">Start Dodge</button></div>
+        <p class="arcade-status" id="dodgeStatus">Move left and right to avoid the falling crackers.</p>
+        <p class="arcade-hint">Use ← → or A / D keys, or move your pointer / finger across the game field.</p>
+      </div>
+
+      <div class="arcade-panel" id="arcade-tap" hidden>
+        <div class="arcade-stats">
+          <div class="arcade-stat">Time <b id="tapTime">20</b>s</div>
+          <div class="arcade-stat">Score <b id="tapScore">0</b></div>
+          <div class="arcade-stat">Lives <b id="tapLives">3</b></div>
+        </div>
+        <div class="tap-grid" id="tapGrid"></div>
+        <div class="arcade-controls"><button class="arcade-btn" id="tapStart" type="button">Start Tap Rush</button></div>
+        <p class="arcade-status" id="tapStatus">Tap the glowing diyas. Avoid the firecrackers!</p>
+        <p class="arcade-hint">You have 20 seconds. Each diya is worth 10 points; tapping a cracker costs one life.</p>
+      </div>
+
+      <div class="arcade-panel" id="arcade-puzzle" hidden>
+        <div class="arcade-stats">
+          <div class="arcade-stat">Moves <b id="puzzleMoves">0</b></div>
+          <div class="arcade-stat">Time <b id="puzzleTime">0</b>s</div>
+        </div>
+        <div class="puzzle-grid" id="puzzleGrid"></div>
+        <div class="arcade-controls">
+          <button class="arcade-btn" id="puzzleStart" type="button">Shuffle Puzzle</button>
+        </div>
+        <p class="arcade-status" id="puzzleStatus">Arrange the numbers from 1 to 8, leaving the empty space last.</p>
+        <p class="arcade-hint">Tap a tile next to the empty space to slide it. Complete the 3 × 3 rangoli puzzle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wheel-section" aria-labelledby="wheelHeading">
+    <h2 id="wheelHeading">🎡 Spin the Diwali Gift Wheel!</h2>
+    <p>One spin, one surprise. Give the wheel a spin and discover what the Hacknfinity team has in store for you!</p>
+    <div class="wheel-wrap">
+      <div class="wheel-pointer" aria-hidden="true"></div>
+      <canvas id="wheelCanvas" width="800" height="800" aria-label="Prize wheel with eleven possible rewards"></canvas>
+      <div class="wheel-hub">SPIN<br>WIN</div>
+    </div>
+    <button class="spin-btn" id="spinButton" type="button">✨ SPIN NOW</button>
+    
+    <div class="sound-line" style="margin:13px auto 0;color:#d9c9e8;font-size:12px">
+      🔊 Click sounds, game sound effects, wheel sounds and fireworks are enabled (keep your device volume on).
+    </div>
+
+    <div class="wheel-result" id="wheelResult" aria-live="polite">
+      <h3 id="resultTitle">Your surprise!</h3>
+      <p id="resultMessage"></p>
+      <div class="request-box" id="requestBox">
+        <label for="requestText" style="color:#ffe0a0;font-size:13px;font-weight:700">Tell us what you have in mind</label>
+        <textarea id="requestText" placeholder="Write your request here..."></textarea>
+        <button class="copy-request" id="copyRequest" type="button">Copy my request</button>
+      </div>
+      <div style="margin-top:14px"><button class="copy-request" id="spinAgain" type="button" style="display:none">Spin again</button></div>
+    </div>
+    <p class="spin-note">Rewards and opportunities are subject to eligibility, verification and availability. The wheel is a fun festive activity; it does not guarantee a cash or commercial reward.</p>
+  </section>
+
+  <div class="footer">Made with light, gratitude &amp; the Hacknfinity spirit ✨</div>
+</section>
+</main>
+<script>
+// Audio is synthesised locally with Web Audio; no external audio files required.
+let festiveAudioContext = null;
+let spinSoundTimer = null;
+let spinSoundTicks = 0;
+let audioMaster = null;
+function getFestiveAudio(){
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if(!AC) return null;
+  if(!festiveAudioContext){
+    festiveAudioContext = new AC();
+    audioMaster = festiveAudioContext.createGain();
+    audioMaster.gain.value = 0.22;
+    audioMaster.connect(festiveAudioContext.destination);
+  }
+  if(festiveAudioContext.state === "suspended") festiveAudioContext.resume();
+  return festiveAudioContext;
+}
+function tone(freq, duration, type="sine", volume=0.22, when=0, endFreq=null){
+  const ac=getFestiveAudio(); if(!ac || !audioMaster)return;
+  const t=ac.currentTime+when;
+  const osc=ac.createOscillator(), gain=ac.createGain();
+  osc.type=type; osc.frequency.setValueAtTime(freq,t);
+  if(endFreq) osc.frequency.exponentialRampToValueAtTime(Math.max(1,endFreq),t+duration);
+  gain.gain.setValueAtTime(0.0001,t);
+  gain.gain.exponentialRampToValueAtTime(Math.max(.0002,volume),t+.012);
+  gain.gain.exponentialRampToValueAtTime(.0001,t+duration);
+  osc.connect(gain);gain.connect(audioMaster);
+  osc.start(t);osc.stop(t+duration+.03);
+}
+
+// Every intentional page click gets a short soft UI sound.
+document.addEventListener("click", (event)=>{
+  const target=event.target;
+  if(target){
+    tone(720,.055,"sine",.055,0,520);
+  }
+}, true);
+
+function playSpinStart(){
+  getFestiveAudio();
+  tone(180,.42,"sawtooth",.15,0,620);
+  tone(360,.32,"triangle",.12,.08,880);
+}
+function playWheelTick(){
+  tone(1050,.055,"square",.11,0,720);
+  tone(1550,.035,"sine",.06,.006,1100);
+}
+function startWheelTicks(durationMs=5900){
+  stopWheelTicks();spinSoundTicks=0;
+  const start=performance.now();
+  function tick(){
+    const elapsed=performance.now()-start;
+    const progress=Math.min(1,elapsed/durationMs);
+    // Ticks begin quickly and slow down to match the wheel easing.
+    const interval=65+Math.pow(progress,2.2)*410;
+    playWheelTick();spinSoundTicks++;
+    if(elapsed<durationMs) spinSoundTimer=setTimeout(tick,interval);
+  }
+  tick();
+}
+function stopWheelTicks(){if(spinSoundTimer){clearTimeout(spinSoundTimer);spinSoundTimer=null}}
+function playPrizeReveal(){
+  // Bright three-note celebratory chime.
+  tone(660,.42,"sine",.17,0,880);
+  tone(830,.48,"sine",.16,.13,1100);
+  tone(990,.72,"triangle",.18,.28,1320);
+  tone(1320,.65,"sine",.12,.48,990);
+}
+function playTryAgain(){
+  tone(520,.18,"triangle",.12,0,420);
+  tone(660,.24,"triangle",.12,.18,780);
+}
+function firecrackerBurst(x=Math.random()*innerWidth,y=Math.random()*innerHeight*.55){
+  const flash=document.createElement("div");
+  flash.className="cracker-flash";
+  flash.style.setProperty("--fx",`${x}px`);
+  flash.style.setProperty("--fy",`${y}px`);
+  document.body.appendChild(flash);
+  setTimeout(()=>flash.remove(),800);
+  const emojis=["🎆","✨","💥","🎇"];
+  for(let i=0;i<8;i++){
+    const bit=document.createElement("span");
+    bit.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    bit.style.cssText=`position:fixed;z-index:18;left:${x}px;top:${y}px;pointer-events:none;font-size:${15+Math.random()*17}px;transition:transform ${.65+Math.random()*.5}s ease-out,opacity 1s;`;
+    document.body.appendChild(bit);
+    requestAnimationFrame(()=>{bit.style.transform=`translate(${(Math.random()-.5)*220}px,${(Math.random()-.5)*190}px) rotate(${Math.random()*360}deg) scale(.5)`;bit.style.opacity="0"});
+    setTimeout(()=>bit.remove(),1300);
+  }
+  // A short, soft celebratory pop and shimmer.
+  tone(220,.13,"sawtooth",.08,0,90);
+  tone(1180,.10,"sine",.045,.025,380);
+}
+
+// Diwali Dhamaka mini-game: collect diyas and sweets, avoid crackers.
+(function initDiwaliGame(){
+  const gameCanvas=document.getElementById("diwaliGame");
+  if(!gameCanvas)return;
+  const gctx=gameCanvas.getContext("2d");
+  const GW=720, GH=420;
+  const scoreEl=document.getElementById("gameScore");
+  const timeEl=document.getElementById("gameTime");
+  const livesEl=document.getElementById("gameLives");
+  const overlay=document.getElementById("gameOverlay");
+  const overlayTitle=document.getElementById("gameOverlayTitle");
+  const overlayText=document.getElementById("gameOverlayText");
+  const startBtn=document.getElementById("gameStart");
+  let score=0,lives=3,seconds=45,running=false,lastTime=0,spawnClock=0,objects=[],keys={},animationId=0;
+  const player={x:GW/2,y:GH-45,w:100,h:28,speed:440};
+  let gameFrame=0;
+  function updateStats(){scoreEl.textContent=score;timeEl.textContent=seconds;livesEl.textContent=lives;}
+  function roundedRect(c,x,y,w,h,r){
+    c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);
+    c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();
+  }
+  function drawBackground(){
+    const grad=gctx.createLinearGradient(0,0,0,GH);
+    grad.addColorStop(0,"#211438");grad.addColorStop(1,"#0d1025");
+    gctx.fillStyle=grad;gctx.fillRect(0,0,GW,GH);
+    // Festive hanging lights and distant skyline.
+    for(let i=0;i<9;i++){
+      const x=35+i*82;
+      gctx.strokeStyle="#9e6b56";gctx.lineWidth=2;gctx.beginPath();gctx.moveTo(x,0);gctx.lineTo(x,18);gctx.stroke();
+      gctx.fillStyle=i%2?"#ffbd54":"#ffdf85";gctx.shadowColor=gctx.fillStyle;gctx.shadowBlur=13;
+      gctx.beginPath();gctx.arc(x,23,5,0,Math.PI*2);gctx.fill();gctx.shadowBlur=0;
+    }
+    gctx.fillStyle="#322342";
+    for(let i=0;i<8;i++){
+      const x=i*100-8,h=70+(i%3)*24;
+      gctx.fillRect(x,GH-h,72,h);
+      gctx.fillStyle="#ffce78";
+      for(let j=0;j<3;j++)for(let k=0;k<2;k++)gctx.fillRect(x+12+k*25,GH-h+14+j*18,7,8);
+      gctx.fillStyle="#322342";
+    }
+    gctx.fillStyle="#5e3a53";gctx.fillRect(0,GH-16,GW,16);
+    gctx.strokeStyle="#d28a52";gctx.lineWidth=2;gctx.beginPath();gctx.moveTo(0,GH-16);gctx.lineTo(GW,GH-16);gctx.stroke();
+  }
+  function drawPlayer(){
+    gctx.save();gctx.translate(player.x,player.y);
+    gctx.shadowColor="#ffbd54";gctx.shadowBlur=19;
+    gctx.fillStyle="#d99543";gctx.beginPath();gctx.ellipse(0,0,player.w/2,12,0,0,Math.PI*2);gctx.fill();
+    gctx.shadowBlur=0;gctx.fillStyle="#7f365f";gctx.beginPath();gctx.ellipse(0,-5,player.w/2-8,9,0,Math.PI,Math.PI*2);gctx.fill();
+    gctx.fillStyle="#ffe0a0";gctx.font="24px sans-serif";gctx.textAlign="center";gctx.fillText("🧺",0,-12);
+    gctx.restore();
+  }
+  function drawObject(o){
+    gctx.save();gctx.translate(o.x,o.y);gctx.font="32px sans-serif";gctx.textAlign="center";gctx.textBaseline="middle";
+    if(o.type==="diya"){gctx.shadowColor="#ffb545";gctx.shadowBlur=16;}
+    if(o.type==="sweet"){gctx.shadowColor="#f08ac8";gctx.shadowBlur=12;}
+    if(o.type==="cracker"){gctx.shadowColor="#ff604d";gctx.shadowBlur=13;}
+    gctx.fillText(o.emoji,0,0);gctx.restore();
+  }
+  function render(){
+    drawBackground();
+    // Decorative sparkles.
+    for(let i=0;i<18;i++){
+      const x=(i*83+gameFrame*.15)%GW,y=60+(i*47)%235;
+      gctx.globalAlpha=.25+.2*Math.sin(gameFrame*.04+i);
+      gctx.fillStyle="#ffe0a0";gctx.fillRect(x,y,2,2);
+    }
+    gctx.globalAlpha=1;
+    objects.forEach(drawObject);drawPlayer();
+  }
+  function spawnObject(){
+    const roll=Math.random();
+    let type=roll<.52?"diya":roll<.79?"sweet":"cracker";
+    const emoji=type==="diya"?"🪔":type==="sweet"?"🍬":"🧨";
+    objects.push({x:35+Math.random()*(GW-70),y:-25,vy:130+Math.random()*110+(45-seconds)*1.3,type,emoji,spin:Math.random()*6});
+  }
+  function endGame(won=false){
+    running=false;
+    overlay.classList.remove("hidden");
+    overlayTitle.textContent=won?"🏆 Diwali Champion!":"🎆 Game Over!";
+    overlayText.textContent=won?
+      `Amazing! You reached ${score} points. Keep spreading the festive spirit!`:
+      `You scored ${score} points. ${score>=100?"Great catching!":"Practice makes perfect!"} Try again and beat your high score!`;
+    startBtn.textContent="🔄 PLAY AGAIN";
+    if(typeof playPrizeReveal==="function" && score>=100)playPrizeReveal();
+    else if(typeof playTryAgain==="function")playTryAgain();
+    if(typeof firecrackerBurst==="function"){firecrackerBurst(innerWidth*.5,innerHeight*.34);setTimeout(()=>firecrackerBurst(innerWidth*.63,innerHeight*.27),250);}
+  }
+  function startGame(){
+    score=0;lives=3;seconds=45;objects=[];spawnClock=0;lastTime=performance.now();running=true;
+    player.x=GW/2;updateStats();overlay.classList.add("hidden");startBtn.textContent="🔄 PLAY AGAIN";
+    if(typeof playSpinStart==="function")playSpinStart();
+    cancelAnimationFrame(animationId);animationId=requestAnimationFrame(loop);
+  }
+  function loop(timestamp){
+    if(!running)return;
+    const dt=Math.min((timestamp-lastTime)/1000,.04);lastTime=timestamp;gameFrame++;
+    if(keys.ArrowLeft||keys.a||keys.A)player.x-=player.speed*dt;
+    if(keys.ArrowRight||keys.d||keys.D)player.x+=player.speed*dt;
+    player.x=Math.max(player.w/2,Math.min(GW-player.w/2,player.x));
+    spawnClock+=dt;
+    if(spawnClock>.65){spawnObject();spawnClock=0;}
+    objects.forEach(o=>{o.y+=o.vy*dt;o.spin+=dt*3});
+    const remaining=[];
+    for(const o of objects){
+      if(o.y>GH-83 && o.y<GH-19 && Math.abs(o.x-player.x)<player.w/2+17){
+        if(o.type==="cracker"){
+          lives--;
+          if(typeof tone==="function"){tone(170,.18,"sawtooth",.11,0,70);}
+          if(typeof firecrackerBurst==="function")firecrackerBurst(innerWidth*(.25+Math.random()*.5),innerHeight*.62);
+        }else{
+          score+=10;
+          if(typeof tone==="function"){tone(o.type==="diya"?900:1150,.12,"sine",.1,0,o.type==="diya"?1250:1500);}
+        }
+        updateStats();
+      }else if(o.y<GH+30){remaining.push(o);}
+    }
+    objects=remaining;
+    // Countdown uses dt so it remains accurate across frame rates.
+    seconds=Math.max(0,Math.ceil(seconds-dt));
+    updateStats();
+    render();
+    if(lives<=0||seconds<=0){endGame(score>=100);return;}
+    animationId=requestAnimationFrame(loop);
+  }
+  startBtn.addEventListener("click",startGame);
+  addEventListener("keydown",e=>{
+    if(["ArrowLeft","ArrowRight"," "].includes(e.key) && running)e.preventDefault();
+    keys[e.key]=true;
+  });
+  addEventListener("keyup",e=>{keys[e.key]=false;});
+  function moveBasket(e){
+    if(!running)return;
+    const rect=gameCanvas.getBoundingClientRect();
+    const point=e.touches?e.touches[0]:e;
+    if(!point)return;
+    player.x=(point.clientX-rect.left)*(GW/rect.width);
+    player.x=Math.max(player.w/2,Math.min(GW-player.w/2,player.x));
+  }
+  gameCanvas.addEventListener("pointerdown",e=>{moveBasket(e);gameCanvas.setPointerCapture?.(e.pointerId);});
+  gameCanvas.addEventListener("pointermove",e=>{if(e.buttons||e.pointerType==="touch")moveBasket(e);});
+  render();updateStats();
+})();
+
+function festiveCursor(){
+  const cursor=document.getElementById("sparkCursor");
+  if(!cursor || matchMedia("(pointer: coarse)").matches)return;
+  let targetX=innerWidth/2,targetY=innerHeight/2,currentX=targetX,currentY=targetY,lastSpark=0;
+  const symbols=["✦","✧","✺","·","✨","✴"];
+  function frame(){
+    currentX+=(targetX-currentX)*.24;currentY+=(targetY-currentY)*.24;
+    cursor.style.left=currentX+"px";cursor.style.top=currentY+"px";
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  addEventListener("mousemove",e=>{
+    targetX=e.clientX;targetY=e.clientY;cursor.style.opacity="1";
+    const now=performance.now();
+    if(now-lastSpark>32){
+      lastSpark=now;
+      const s=document.createElement("span");s.className="spark-dot";
+      s.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      s.style.left=(e.clientX+(Math.random()-.5)*10)+"px";
+      s.style.top=(e.clientY+(Math.random()-.5)*10)+"px";
+      s.style.fontSize=(10+Math.random()*13)+"px";
+      s.style.setProperty("--drift",((Math.random()-.5)*35)+"px");
+      s.style.color=["#ffe5a0","#8beaff","#d89bff","#ff9bd7"][Math.floor(Math.random()*4)];
+      document.body.appendChild(s);setTimeout(()=>s.remove(),900);
+    }
+  },{passive:true});
+  addEventListener("mouseleave",()=>cursor.style.opacity="0");
+  addEventListener("pointerdown",()=>cursor.classList.add("cursor-down"));
+  addEventListener("pointerup",()=>cursor.classList.remove("cursor-down"));
+  document.addEventListener("pointerover",e=>{
+    if(e.target.closest("button,a,[role='button'],.game-frame"))cursor.classList.add("cursor-hover");
+  });
+  document.addEventListener("pointerout",e=>{
+    if(e.target.closest("button,a,[role='button'],.game-frame"))cursor.classList.remove("cursor-hover");
+  });
+}
+festiveCursor();
+
+const prizeItems = [
+  {label:"Free Workshop Pass", color:"#7c3f91", title:"🎟️ Free Workshop Pass!", message:"You landed on a FREE WORKSHOP PASS! Keep an eye on Hacknfinity announcements for the next workshop and redemption details."},
+  {label:"n8n Pro", color:"#d85a83", title:"⚡ n8n Pro Surprise!", message:"You landed on n8n Pro! The Hacknfinity team will confirm eligibility, plan details and availability with you."},
+  {label:"Core Members Interview", color:"#a84cc0", title:"🎤 Core Members Interview!", message:"You landed on an opportunity to be interviewed for the Hacknfinity Core Team. This is an interview opportunity, not automatic membership."},
+  {label:"Campus Ambassador", color:"#426da8", title:"🚀 Campus Ambassador!", message:"You landed on the Hacknfinity Campus Ambassador opportunity. The team will share the application and selection process."},
+  {label:".xyz Domain", color:"#278b91", title:"🌐 .xyz Domain!", message:"You landed on a .xyz domain surprise! Domain availability and redemption details will be confirmed by the Hacknfinity team."},
+  {label:"Dare the Founder", color:"#bf7534", title:"😄 Dare the Founder!", message:"You get to give Abhinav, Founder & CEO of Hacknfinity, a fun and respectful dare. Keep it creative!"},
+  {label:"Goodies", color:"#9c4b58", title:"🎁 Hacknfinity Goodies!", message:"You landed on Hacknfinity goodies! The team will confirm the available goodies and collection or delivery details."},
+  {label:"Any Other Request", color:"#5866a8", title:"💡 Make a Wish!", message:"Have another idea or request? Tell us what you have in mind. Your request can be copied and shared with the Hacknfinity team."},
+  {label:"Try Next Time", color:"#6b6b83", title:"🌙 Try Next Time!", message:"Not this time! Stay connected with Hacknfinity and try your luck at the next celebration."},
+  {label:"Nothing", color:"#45455f", title:"✨ Keep Shining!", message:"No prize on this spin, but you still have our warm Diwali wishes. Keep learning, building and shining!"},
+  {label:"Try Again", color:"#b35a31", title:"🔄 One More Chance!", message:"The wheel says TRY AGAIN! You have another spin. Good luck!"}
+];
+const wheelCanvas = document.getElementById("wheelCanvas");
+const wheelCtx = wheelCanvas.getContext("2d");
+const wheelSpinButton = document.getElementById("spinButton");
+const wheelSlice = Math.PI * 2 / prizeItems.length;
+let wheelRotation = 0;
+let wheelBusy = false;
+function drawWheel(){
+  const cx=400, cy=400, radius=382;
+  wheelCtx.clearRect(0,0,800,800);
+  prizeItems.forEach((item,index)=>{
+    const start=-Math.PI/2 + index*wheelSlice;
+    const end=start+wheelSlice;
+    wheelCtx.beginPath();wheelCtx.moveTo(cx,cy);wheelCtx.arc(cx,cy,radius,start,end);wheelCtx.closePath();
+    wheelCtx.fillStyle=item.color;wheelCtx.fill();
+    wheelCtx.strokeStyle="#ffe7b4";wheelCtx.lineWidth=5;wheelCtx.stroke();
+    wheelCtx.save();
+    const mid=start+wheelSlice/2;
+    wheelCtx.translate(cx+Math.cos(mid)*252,cy+Math.sin(mid)*252);
+    let textAngle=mid+Math.PI/2;
+    if(mid>Math.PI/2 && mid<Math.PI*1.5) textAngle+=Math.PI;
+    wheelCtx.rotate(textAngle);
+    wheelCtx.fillStyle="#fff";wheelCtx.textAlign="center";wheelCtx.textBaseline="middle";
+    wheelCtx.shadowColor="#0008";wheelCtx.shadowBlur=5;
+    const words=item.label.split(" ");
+    const lines=[];
+    let line="";
+    words.forEach(word=>{const test=line?line+" "+word:word;if(wheelCtx.measureText(test).width>128 && line){lines.push(line);line=word}else line=test});
+    if(line)lines.push(line);
+    wheelCtx.font="bold 25px Arial";
+    const lineHeight=29;
+    lines.slice(0,3).forEach((txt,i)=>wheelCtx.fillText(txt,0,(i-(Math.min(lines.length,3)-1)/2)*lineHeight,138));
+    wheelCtx.restore();
+  });
+  wheelCtx.beginPath();wheelCtx.arc(cx,cy,radius,0,Math.PI*2);wheelCtx.strokeStyle="#fff0bf";wheelCtx.lineWidth=12;wheelCtx.stroke();
+}
+drawWheel();
+wheelSpinButton.addEventListener("click",()=>{
+  if(wheelBusy)return;
+  wheelBusy=true;wheelSpinButton.disabled=true;wheelSpinButton.classList.add("spinning");wheelSpinButton.textContent="🎆 THE WHEEL IS SPINNING...";
+  playSpinStart(); startWheelTicks(6100);
+  firecrackerBurst(innerWidth*.22,innerHeight*.25);
+  setTimeout(()=>firecrackerBurst(innerWidth*.78,innerHeight*.32),850);
+  setTimeout(()=>firecrackerBurst(innerWidth*.52,innerHeight*.18),1750);
+  document.getElementById("wheelResult").classList.remove("show");
+  document.getElementById("requestBox").classList.remove("show");
+  document.getElementById("spinAgain").style.display="none";
+  const selectedIndex=Math.floor(Math.random()*prizeItems.length);
+  const selected=prizeItems[selectedIndex];
+  const segmentCenter=-Math.PI/2+(selectedIndex+0.5)*wheelSlice;
+  const desired=(((-Math.PI/2-segmentCenter-wheelRotation)%(Math.PI*2))+(Math.PI*2))%(Math.PI*2);
+  const finalRotation=wheelRotation+Math.PI*2*(6+Math.floor(Math.random()*2))+desired;
+  wheelRotation=finalRotation;
+  wheelCanvas.style.transform=`rotate(${finalRotation}rad)`;
+  setTimeout(()=>{
+    stopWheelTicks();wheelBusy=false;wheelSpinButton.disabled=false;wheelSpinButton.classList.remove("spinning");wheelSpinButton.textContent="✨ SPIN AGAIN";
+    if(selected.label==="Try Again"){playTryAgain()}else{playPrizeReveal()}
+    firecrackerBurst(innerWidth*.5,innerHeight*.27);
+    setTimeout(()=>firecrackerBurst(innerWidth*.34,innerHeight*.22),320);
+    setTimeout(()=>firecrackerBurst(innerWidth*.67,innerHeight*.2),650);
+    document.getElementById("resultTitle").textContent=selected.title;
+    document.getElementById("resultMessage").textContent=selected.message;
+    document.getElementById("wheelResult").classList.add("show");
+    if(selected.label==="Try Again"){
+      document.getElementById("spinAgain").style.display="inline-block";
+    }
+    if(selected.label==="Any Other Request" || selected.label==="Dare the Founder"){
+      document.getElementById("requestBox").classList.add("show");
+      document.getElementById("requestText").placeholder=selected.label==="Dare the Founder"?"Write a fun, respectful dare for Abhinav...":"Write your request here...";
+    }
+    if(!["Try Next Time","Nothing"].includes(selected.label)) confettiBurst();
+  },6200);
+});
+document.getElementById("spinAgain").addEventListener("click",()=>wheelSpinButton.click());
+document.getElementById("copyRequest").addEventListener("click",async()=>{
+  const request=document.getElementById("requestText").value.trim();
+  if(!request){document.getElementById("requestText").focus();return}
+  const text=`${document.getElementById("resultTitle").textContent}\nMy request for Hacknfinity: ${request}`;
+  try{await navigator.clipboard.writeText(text);document.getElementById("copyRequest").textContent="Copied! Share it with Hacknfinity";}
+  catch(e){document.getElementById("requestText").value=text;document.getElementById("requestText").select();document.getElementById("copyRequest").textContent="Select and copy the text above";}
+});
+function confettiBurst(){
+  for(let i=0;i<35;i++){
+    const el=document.createElement("span");el.textContent=["✨","🎉","⭐","🎊"][Math.floor(Math.random()*4)];
+    el.style.cssText=`position:fixed;z-index:20;left:${Math.random()*100}vw;top:-30px;font-size:${16+Math.random()*18}px;pointer-events:none;transition:transform ${1.5+Math.random()}s linear,opacity 2.5s`;
+    document.body.appendChild(el);
+    requestAnimationFrame(()=>{el.style.transform=`translate(${(Math.random()-.5)*130}px,${innerHeight+80}px) rotate(${Math.random()*600}deg)`;el.style.opacity="0"});
+    setTimeout(()=>el.remove(),3000);
+  }
+}
+
+const canvas=document.getElementById('fireworks'),ctx=canvas.getContext('2d');
+let w,h,particles=[];
+function resize(){
+ const dpr=Math.min(window.devicePixelRatio||1,2);
+ w=innerWidth;h=innerHeight;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+ canvas.style.width=w+"px";canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+addEventListener('resize',resize);resize();
+function burst(x=Math.random()*w,y=45+Math.random()*h*.52,hue=Math.random()*360){
+ const count=68+Math.floor(Math.random()*36);
+ for(let i=0;i<count;i++){
+  const a=Math.PI*2*i/count,s=1.1+Math.random()*4.1;
+  const life=65+Math.random()*48;
+  particles.push({x,y,px:x,py:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life,maxLife:life,hue,
+   size:.8+Math.random()*2.2,twinkle:Math.random()>.68});
+ }
+ // Add a smaller sparkling inner ring for a layered fireworks look.
+ for(let i=0;i<22;i++){
+  const a=Math.PI*2*i/22,s=1.2+Math.random()*1.1,life=42+Math.random()*22;
+  particles.push({x,y,px:x,py:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life,maxLife:life,hue:(hue+45)%360,
+   size:.8+Math.random()*1.3,twinkle:true});
+ }
+ if(particles.length>1400)particles=particles.slice(-1100);
+}
+setInterval(()=>{
+ burst();
+ if(Math.random()<.52)setTimeout(()=>burst(),150+Math.random()*260);
+},570);
+function animate(){
+ ctx.clearRect(0,0,w,h);
+ particles=particles.filter(p=>p.life>0);
+ for(const p of particles){
+  p.px=p.x;p.py=p.y;p.x+=p.vx;p.y+=p.vy;p.vy+=.021;p.vx*=.992;p.vy*=.992;p.life--;
+  const alpha=Math.max(0,p.life/p.maxLife);
+  ctx.globalAlpha=alpha*.8;
+  ctx.strokeStyle=`hsla(${p.hue},100%,72%,${alpha})`;ctx.lineWidth=p.size*.85;
+  ctx.beginPath();ctx.moveTo(p.px,p.py);ctx.lineTo(p.x,p.y);ctx.stroke();
+  ctx.globalAlpha=alpha;
+  ctx.fillStyle=p.twinkle?`hsl(${p.hue},100%,88%)`:`hsl(${p.hue},100%,68%)`;
+  ctx.beginPath();ctx.arc(p.x,p.y,p.size*(p.twinkle?.8:1),0,Math.PI*2);ctx.fill();
+ }
+ ctx.globalAlpha=1;requestAnimationFrame(animate);
+}
+animate();
+</script>
+
+<script>
+(function(){
+  const screen=document.getElementById("introScreen");
+  const button=document.getElementById("introRevealButton");
+  if(!screen||!button)return;
+  const loading=document.getElementById("introLoading");
+  const progress=document.getElementById("introProgressBar");
+  let opening=false;
+  const music=document.getElementById("diwaliBackgroundMusic");
+  const musicToggle=document.getElementById("musicToggle");
+  const musicLabel=document.getElementById("musicToggleLabel");
+  function updateMusicUI(playing){
+    if(!musicToggle)return;
+    musicToggle.classList.add("visible");
+    musicToggle.classList.toggle("paused",!playing);
+    musicToggle.setAttribute("aria-label",playing?"Pause Diwali background music":"Play Diwali background music");
+    if(musicLabel)musicLabel.textContent=playing?"Music On":"Tap for Music";
+  }
+  function startBackgroundMusic(){
+    if(!music)return;
+    music.volume=0.52;
+    const playback=music.play();
+    if(playback && typeof playback.then==="function"){
+      playback.then(()=>updateMusicUI(true)).catch(()=>updateMusicUI(false));
+    }else{
+      updateMusicUI(!music.paused);
+    }
+  }
+  if(musicToggle){
+    musicToggle.addEventListener("click",()=>{
+      if(!music)return;
+      if(music.paused){
+        music.volume=0.52;
+        const p=music.play();
+        if(p&&typeof p.then==="function")p.then(()=>updateMusicUI(true)).catch(()=>updateMusicUI(false));
+      }else{
+        music.pause();updateMusicUI(false);
+      }
+    });
+  }
+  button.addEventListener("click",()=>{
+    if(opening)return;
+    startBackgroundMusic();
+    opening=true;
+    button.disabled=true;
+    button.textContent="✨ Opening your surprise...";
+    loading.classList.add("show");
+    // Sound starts only after the visitor's click to respect browser autoplay rules.
+    try{
+      const AC=window.AudioContext||window.webkitAudioContext;
+      if(AC){
+        const ac=new AC();
+        if(ac.state==="suspended")ac.resume();
+        const master=ac.createGain();master.gain.value=.18;master.connect(ac.destination);
+        [[440,0,.28],[660,.16,.32],[990,.34,.55],[1320,.62,.6]].forEach(([freq,delay,duration])=>{
+          const osc=ac.createOscillator(),gain=ac.createGain(),t=ac.currentTime+delay;
+          osc.type="sine";osc.frequency.setValueAtTime(freq,t);
+          gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.14,t+.02);
+          gain.gain.exponentialRampToValueAtTime(.0001,t+duration);
+          osc.connect(gain);gain.connect(master);osc.start(t);osc.stop(t+duration+.03);
+        });
+      }
+    }catch(e){}
+    // Extra festive fireworks over the welcome screen.
+    for(let b=0;b<4;b++){
+      setTimeout(()=>{
+        const x=Math.random()*innerWidth,y=Math.random()*innerHeight*.65;
+        const flash=document.createElement("div");
+        flash.style.cssText=`position:fixed;z-index:10001;left:${x}px;top:${y}px;width:8px;height:8px;border-radius:50%;pointer-events:none;box-shadow:0 0 18px 9px #ffd477,0 0 48px 18px #e34bba;animation:introTwinkle .5s ease-out forwards`;
+        screen.appendChild(flash);setTimeout(()=>flash.remove(),700);
+      },b*260);
+    }
+    requestAnimationFrame(()=>{if(progress)progress.style.width="100%"});
+    setTimeout(()=>{
+      screen.classList.add("leaving");
+      document.body.classList.remove("intro-locked");
+      if(typeof burst==="function"){
+        burst(innerWidth*.22,innerHeight*.25,285);
+        setTimeout(()=>burst(innerWidth*.78,innerHeight*.30,195),220);
+        setTimeout(()=>burst(innerWidth*.5,innerHeight*.18,45),480);
+      }
+      setTimeout(()=>screen.remove(),900);
+    },2350);
+  });
+})();
+</script>
+
+<script>
+
+(function initHacknfinityArcade(){
+  const root=document.getElementById("arcadePlayarea");
+  if(!root)return;
+  const cards=[...document.querySelectorAll("[data-arcade-game]")];
+  const panels={memory:document.getElementById("arcade-memory"),simon:document.getElementById("arcade-simon"),
+    dodge:document.getElementById("arcade-dodge"),tap:document.getElementById("arcade-tap"),puzzle:document.getElementById("arcade-puzzle")};
+  const titles={memory:"🧠 Diya Memory Match",simon:"🎨 Rangoli Rhythm",dodge:"🧨 Firecracker Dodge",
+    tap:"🪔 Diya Tap Rush",puzzle:"🪷 Rangoli Tile Puzzle"};
+  let activeGame=null;
+  function sound(freq=760,duration=.09,kind="sine",vol=.09){
+    if(typeof tone==="function")tone(freq,duration,kind,vol);
+  }
+  function openGame(name){
+    if(activeGame && activeGame!==name){
+      if(activeGame==="memory"){stopMemoryTimer();memoryDeck=[];}
+      if(activeGame==="dodge")stopDodge();
+      if(activeGame==="tap")stopTap();
+      if(activeGame==="puzzle"){if(puzzleClock){clearInterval(puzzleClock);puzzleClock=null;}puzzleBoard=[];}
+      if(activeGame==="simon"){simonSequence=[];simonPlaying=true;}
+    }
+    activeGame=name;root.hidden=false;
+    document.getElementById("arcadeActiveTitle").textContent=titles[name];
+    Object.entries(panels).forEach(([key,node])=>node.hidden=key!==name);
+    cards.forEach(card=>card.classList.toggle("active",card.dataset.arcadeGame===name));
+    if(name==="memory" && !memoryDeck.length)startMemory();
+    if(name==="simon" && !simonSequence.length)resetSimon();
+    if(name==="dodge")drawDodgeIdle();
+    if(name==="tap" && !tapCells.length)buildTapGrid();
+    if(name==="puzzle" && !puzzleBoard.length)startPuzzle();
+    root.scrollIntoView({behavior:"smooth",block:"nearest"});
+  }
+  cards.forEach(card=>card.addEventListener("click",()=>openGame(card.dataset.arcadeGame)));
+  document.getElementById("arcadeClose").addEventListener("click",()=>{
+    root.hidden=true;cards.forEach(c=>c.classList.remove("active"));
+    if(activeGame==="memory")memoryDeck=[];
+    if(activeGame==="simon"){simonSequence=[];simonPlaying=true;}
+    if(activeGame==="puzzle"){puzzleBoard=[];if(puzzleClock){clearInterval(puzzleClock);puzzleClock=null;}}
+    activeGame=null;
+    stopDodge();stopMemoryTimer();stopTap();
+  });
+
+  // GAME 1 — DIYA MEMORY MATCH
+  const memorySymbols=["🪔","🏮","🎇","🍬","🪷","🎁","✨","🧡"];
+  const memoryGrid=document.getElementById("memoryGrid");
+  let memoryDeck=[],memoryFlips=[],memoryPairs=0,memoryMoves=0,memoryLocked=false,memorySeconds=60,memoryTimer=null;
+  function renderMemory(){
+    memoryGrid.innerHTML="";
+    memoryDeck.forEach((item,index)=>{
+      const b=document.createElement("button");b.type="button";
+      b.className="memory-card"+(item.open?" flipped":"")+(item.matched?" matched":"");
+      b.textContent=item.matched||item.open?item.symbol:"❔";
+      b.setAttribute("aria-label",item.matched||item.open?item.symbol:"Hidden card");
+      b.disabled=item.matched||memoryLocked;
+      b.addEventListener("click",()=>flipMemory(index));
+      memoryGrid.appendChild(b);
+    });
+    document.getElementById("memoryMoves").textContent=memoryMoves;
+    document.getElementById("memoryPairs").textContent=memoryPairs+"/8";
+    document.getElementById("memoryTime").textContent=memorySeconds;
+  }
+  function stopMemoryTimer(){if(memoryTimer){clearInterval(memoryTimer);memoryTimer=null;}}
+  function startMemory(){
+    stopMemoryTimer();memoryDeck=[...memorySymbols,...memorySymbols].sort(()=>Math.random()-.5)
+      .map((symbol)=>({symbol,open:false,matched:false}));
+    memoryFlips=[];memoryPairs=0;memoryMoves=0;memoryLocked=false;memorySeconds=60;
+    document.getElementById("memoryStatus").textContent="Find all eight matching pairs!";
+    renderMemory();
+    memoryTimer=setInterval(()=>{
+      memorySeconds--;document.getElementById("memoryTime").textContent=memorySeconds;
+      if(memorySeconds<=0){stopMemoryTimer();memoryLocked=true;document.getElementById("memoryStatus").textContent="Time is up! Press Start / Shuffle to try again.";renderMemory();}
+    },1000);
+  }
+  function flipMemory(index){
+    if(memoryLocked||!memoryDeck[index]||memoryDeck[index].open||memoryDeck[index].matched)return;
+    memoryDeck[index].open=true;memoryFlips.push(index);sound(630,.07);renderMemory();
+    if(memoryFlips.length===2){
+      memoryMoves++;
+      const [a,b]=memoryFlips;
+      if(memoryDeck[a].symbol===memoryDeck[b].symbol){
+        memoryDeck[a].matched=memoryDeck[b].matched=true;memoryPairs++;memoryFlips=[];sound(980,.14,"triangle",.12);
+        if(memoryPairs===8){stopMemoryTimer();memoryLocked=true;document.getElementById("memoryStatus").textContent=`Brilliant! All pairs matched in ${memoryMoves} moves.`;if(typeof playPrizeReveal==="function")playPrizeReveal();}
+      }else{
+        memoryLocked=true;setTimeout(()=>{memoryDeck[a].open=memoryDeck[b].open=false;memoryFlips=[];memoryLocked=false;renderMemory();},760);
+      }
+      renderMemory();
+    }
+  }
+  document.getElementById("memoryStart").addEventListener("click",startMemory);
+
+  // GAME 2 — RANGOLI RHYTHM (Simon sequence)
+  const simonPads=[...document.querySelectorAll(".simon-pad")];
+  const simonFrequencies=[440,554,659,784];
+  let simonSequence=[],simonInput=0,simonPlaying=false,simonLevel=0;
+  function resetSimon(){
+    simonSequence=[];simonInput=0;simonPlaying=false;simonLevel=0;
+    document.getElementById("simonLevel").textContent="0";document.getElementById("simonLength").textContent="0";
+    document.getElementById("simonStatus").textContent="Press Start Rhythm to begin.";
+  }
+  function flashSimon(index){
+    const pad=simonPads[index];pad.classList.add("lit");sound(simonFrequencies[index],.22,"sine",.13);
+    setTimeout(()=>pad.classList.remove("lit"),330);
+  }
+  function showSimonSequence(){
+    simonPlaying=true;simonInput=0;document.getElementById("simonStatus").textContent="Watch the colour sequence...";
+    simonSequence.forEach((value,i)=>setTimeout(()=>flashSimon(value),550+i*650));
+    setTimeout(()=>{simonPlaying=false;document.getElementById("simonStatus").textContent="Your turn! Repeat the sequence.";},550+simonSequence.length*650);
+  }
+  function nextSimonLevel(){
+    if(simonLevel>=8){document.getElementById("simonStatus").textContent="Amazing! You completed all 8 levels!";simonPlaying=true;if(typeof playPrizeReveal==="function")playPrizeReveal();return;}
+    simonLevel++;simonSequence.push(Math.floor(Math.random()*4));
+    document.getElementById("simonLevel").textContent=simonLevel;
+    document.getElementById("simonLength").textContent=simonSequence.length;
+    setTimeout(showSimonSequence,450);
+  }
+  function startSimon(){resetSimon();nextSimonLevel();}
+  simonPads.forEach((pad,index)=>pad.addEventListener("click",()=>{
+    if(simonPlaying||!simonSequence.length||simonLevel>=8)return;
+    flashSimon(index);
+    if(index!==simonSequence[simonInput]){
+      simonPlaying=true;document.getElementById("simonStatus").textContent="Not quite! Press Start Rhythm to try again.";sound(180,.25,"sawtooth",.11);return;
+    }
+    simonInput++;
+    if(simonInput===simonSequence.length){
+      simonPlaying=true;document.getElementById("simonStatus").textContent="Perfect! Next level...";
+      sound(900,.15,"triangle",.12);setTimeout(nextSimonLevel,850);
+    }
+  }));
+  document.getElementById("simonStart").addEventListener("click",startSimon);
+
+  // GAME 3 — FIRECRACKER DODGE
+  const dodgeCanvas=document.getElementById("dodgeCanvas"),dctx=dodgeCanvas.getContext("2d");
+  const DW=640,DH=330;
+  let dodgeRunning=false,dodgeId=0,dodgeLast=0,dodgeElapsed=0,dodgeSpawn=0,dodgeObjects=[],dodgeX=DW/2,dodgeLives=3,dodgeScore=0,dodgeKeys={};
+  function drawDodge(){
+    const grad=dctx.createLinearGradient(0,0,0,DH);grad.addColorStop(0,"#24183b");grad.addColorStop(1,"#0b1224");
+    dctx.fillStyle=grad;dctx.fillRect(0,0,DW,DH);
+    for(let i=0;i<7;i++){dctx.fillStyle="#ffcc7844";dctx.beginPath();dctx.arc(45+i*91,70+(i%3)*30,2.5,0,7);dctx.fill();}
+    dctx.fillStyle="#503052";dctx.fillRect(0,DH-25,DW,25);
+    dctx.font="34px sans-serif";dctx.textAlign="center";dctx.fillText("🧍",dodgeX,DH-32);
+    dodgeObjects.forEach(o=>{dctx.font="30px sans-serif";dctx.fillText(o.kind==="cracker"?"🧨":"✨",o.x,o.y);});
+  }
+  function drawDodgeIdle(){if(!dodgeRunning){dodgeObjects=[];dodgeX=DW/2;drawDodge();}}
+  function stopDodge(){
+    dodgeRunning=false;if(dodgeId)cancelAnimationFrame(dodgeId);dodgeId=0;
+  }
+  function finishDodge(message){
+    stopDodge();document.getElementById("dodgeStatus").textContent=message;
+    if(dodgeScore>=100&&typeof playPrizeReveal==="function")playPrizeReveal();
+  }
+  function startDodge(){
+    stopDodge();dodgeRunning=true;dodgeLast=performance.now();dodgeElapsed=0;dodgeSpawn=0;dodgeObjects=[];
+    dodgeLives=3;dodgeScore=0;dodgeX=DW/2;dodgeKeys={};
+    document.getElementById("dodgeLives").textContent=3;document.getElementById("dodgeScore").textContent=0;
+    document.getElementById("dodgeTime").textContent=30;document.getElementById("dodgeStatus").textContent="Dodge the crackers!";
+    dodgeId=requestAnimationFrame(dodgeLoop);
+  }
+  function dodgeLoop(now){
+    if(!dodgeRunning)return;
+    const dt=Math.min((now-dodgeLast)/1000,.04);dodgeLast=now;dodgeElapsed+=dt;dodgeSpawn+=dt;
+    if(dodgeKeys.ArrowLeft||dodgeKeys.a||dodgeKeys.A)dodgeX-=360*dt;
+    if(dodgeKeys.ArrowRight||dodgeKeys.d||dodgeKeys.D)dodgeX+=360*dt;
+    dodgeX=Math.max(30,Math.min(DW-30,dodgeX));
+    if(dodgeSpawn>.55){dodgeObjects.push({x:25+Math.random()*(DW-50),y:-25,kind:Math.random()<.8?"cracker":"spark",speed:150+Math.random()*130});dodgeSpawn=0;}
+    dodgeObjects=dodgeObjects.filter(o=>{
+      o.y+=o.speed*dt;
+      if(o.kind==="cracker"&&o.y>DH-65&&o.y<DH-18&&Math.abs(o.x-dodgeX)<38){
+        dodgeLives--;document.getElementById("dodgeLives").textContent=dodgeLives;sound(150,.18,"sawtooth",.12);
+        return false;
+      }
+      if(o.y>DH+30){if(o.kind==="cracker"){dodgeScore+=5;document.getElementById("dodgeScore").textContent=dodgeScore;}return false;}
+      return true;
+    });
+    const left=Math.max(0,30-Math.floor(dodgeElapsed));document.getElementById("dodgeTime").textContent=left;
+    drawDodge();
+    if(dodgeLives<=0){finishDodge(`Game over! You scored ${dodgeScore}. Press Start Dodge to replay.`);return;}
+    if(dodgeElapsed>=30){finishDodge(`Time survived! Final score: ${dodgeScore}.`);return;}
+    dodgeId=requestAnimationFrame(dodgeLoop);
+  }
+  document.getElementById("dodgeStart").addEventListener("click",startDodge);
+  addEventListener("keydown",e=>{dodgeKeys[e.key]=true;if(dodgeRunning&&["ArrowLeft","ArrowRight"].includes(e.key))e.preventDefault();});
+  addEventListener("keyup",e=>{dodgeKeys[e.key]=false;});
+  function moveDodge(e){
+    if(!dodgeRunning)return;const r=dodgeCanvas.getBoundingClientRect();
+    dodgeX=Math.max(25,Math.min(DW-25,(e.clientX-r.left)*DW/r.width));
+  }
+  dodgeCanvas.addEventListener("pointerdown",moveDodge);
+  dodgeCanvas.addEventListener("pointermove",e=>{if(e.buttons||e.pointerType==="touch")moveDodge(e);});
+  drawDodgeIdle();
+
+  // GAME 4 — DIYA TAP RUSH
+  const tapGrid=document.getElementById("tapGrid");
+  let tapCells=[],tapScore=0,tapLives=3,tapSeconds=20,tapTimer=null,tapRunning=false;
+  function buildTapGrid(){
+    tapGrid.innerHTML="";tapCells=[];
+    for(let i=0;i<12;i++){
+      const b=document.createElement("button");b.type="button";b.className="tap-cell";b.textContent="✨";
+      b.addEventListener("click",()=>hitTapCell(i));tapGrid.appendChild(b);tapCells.push(b);
+    }
+    resetTapBoard();
+  }
+  function resetTapBoard(){
+    tapCells.forEach(b=>{b.dataset.kind="empty";b.textContent="✨";b.style.borderColor="#ffffff2b";});
+    if(tapCells.length){
+      const a=Math.floor(Math.random()*12);let bomb=Math.floor(Math.random()*12);while(bomb===a)bomb=Math.floor(Math.random()*12);
+      tapCells[a].dataset.kind="diya";tapCells[a].textContent="🪔";tapCells[a].style.borderColor="#ffd477";
+      tapCells[bomb].dataset.kind="bomb";tapCells[bomb].textContent="🧨";tapCells[bomb].style.borderColor="#ff6b7288";
+    }
+  }
+  function stopTap(){tapRunning=false;if(tapTimer){clearInterval(tapTimer);tapTimer=null;}}
+  function finishTap(msg){stopTap();document.getElementById("tapStatus").textContent=msg;}
+  function startTap(){
+    if(!tapCells.length)buildTapGrid();stopTap();tapScore=0;tapLives=3;tapSeconds=20;tapRunning=true;
+    document.getElementById("tapScore").textContent=0;document.getElementById("tapLives").textContent=3;
+    document.getElementById("tapTime").textContent=20;document.getElementById("tapStatus").textContent="Go! Catch the diyas!";
+    resetTapBoard();
+    tapTimer=setInterval(()=>{tapSeconds--;document.getElementById("tapTime").textContent=tapSeconds;if(tapSeconds<=0)finishTap(`Time up! You collected ${tapScore} points.`);},1000);
+  }
+  function hitTapCell(i){
+    if(!tapRunning)return;
+    const cell=tapCells[i],kind=cell.dataset.kind;
+    if(kind==="diya"){
+      tapScore+=10;document.getElementById("tapScore").textContent=tapScore;sound(980,.1,"sine",.12);
+      cell.textContent="💫";cell.dataset.kind="empty";setTimeout(resetTapBoard,160);
+    }else if(kind==="bomb"){
+      tapLives--;document.getElementById("tapLives").textContent=tapLives;sound(140,.2,"sawtooth",.12);
+      cell.textContent="💥";cell.dataset.kind="empty";
+      if(tapLives<=0){finishTap(`Too many crackers! Final score: ${tapScore}.`);return;}
+      setTimeout(resetTapBoard,250);
+    }else{sound(300,.045,"sine",.035);}
+  }
+  document.getElementById("tapStart").addEventListener("click",startTap);
+  buildTapGrid();
+
+  // GAME 5 — RANGOLI SLIDING TILE PUZZLE
+  const puzzleGrid=document.getElementById("puzzleGrid");
+  let puzzleBoard=[],puzzleMoves=0,puzzleStarted=0,puzzleClock=null;
+  function solvedPuzzle(){return puzzleBoard.every((v,i)=>v===(i===8?0:i+1));}
+  function renderPuzzle(){
+    puzzleGrid.innerHTML="";
+    puzzleBoard.forEach((value,index)=>{
+      const b=document.createElement("button");b.type="button";b.className="puzzle-tile"+(value===0?" empty":"");
+      b.textContent=value===0?"":value;b.disabled=value===0;
+      b.addEventListener("click",()=>movePuzzle(index));puzzleGrid.appendChild(b);
+    });
+    document.getElementById("puzzleMoves").textContent=puzzleMoves;
+  }
+  function startPuzzle(){
+    if(puzzleClock){clearInterval(puzzleClock);puzzleClock=null;}
+    puzzleBoard=[1,2,3,4,5,6,7,8,0];let empty=8,previous=-1;
+    // Shuffle only through legal moves, so the puzzle is always solvable.
+    for(let step=0;step<65;step++){
+      const row=Math.floor(empty/3),col=empty%3,options=[];
+      if(row>0)options.push(empty-3);if(row<2)options.push(empty+3);
+      if(col>0)options.push(empty-1);if(col<2)options.push(empty+1);
+      const filtered=options.filter(x=>x!==previous),pick=filtered[Math.floor(Math.random()*filtered.length)];
+      [puzzleBoard[empty],puzzleBoard[pick]]=[puzzleBoard[pick],puzzleBoard[empty]];
+      previous=empty;empty=pick;
+    }
+    puzzleMoves=0;puzzleStarted=Date.now();document.getElementById("puzzleTime").textContent=0;
+    document.getElementById("puzzleStatus").textContent="Slide neighbouring tiles into the empty space.";
+    renderPuzzle();
+    puzzleClock=setInterval(()=>{document.getElementById("puzzleTime").textContent=Math.floor((Date.now()-puzzleStarted)/1000);},1000);
+  }
+  function movePuzzle(index){
+    const empty=puzzleBoard.indexOf(0),r=Math.floor(index/3),c=index%3,er=Math.floor(empty/3),ec=empty%3;
+    if(Math.abs(r-er)+Math.abs(c-ec)!==1)return;
+    [puzzleBoard[index],puzzleBoard[empty]]=[puzzleBoard[empty],puzzleBoard[index]];
+    puzzleMoves++;sound(650,.06);renderPuzzle();
+    if(solvedPuzzle()){
+      if(puzzleClock){clearInterval(puzzleClock);puzzleClock=null;}
+      const secs=Math.floor((Date.now()-puzzleStarted)/1000);
+      document.getElementById("puzzleStatus").textContent=`Rangoli complete! Solved in ${puzzleMoves} moves and ${secs} seconds.`;
+      if(typeof playPrizeReveal==="function")playPrizeReveal();
+    }
+  }
+  document.getElementById("puzzleStart").addEventListener("click",startPuzzle);
+})();
+
+</script>
+</body>
+</html>
